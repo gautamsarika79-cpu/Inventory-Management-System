@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "name": "Watches",
+    "icon": "⌚"
+  },
+  {
+    "id": 2,
+    "name": "Jewellery",
+    "icon": "💎"
+  },
+  {
+    "id": 3,
+    "name": "Fashion",
+    "icon": "👗"
+  },
+  {
+    "id": 4,
+    "name": "Skin Care",
+    "icon": "🧴"
+  },
+  {
+    "id": 5,
+    "name": "Makeup",
+    "icon": "💄"
+  },
+  {
+    "id": 6,
+    "name": "Cars",
+    "icon": "🚗"
+  },
+  {
+    "id": 7,
+    "name": "Electronics",
+    "icon": "💻"
+  },
+  {
+    "id": 8,
+    "name": "Food & Beverage",
+    "icon": "🍔"
+  },
+  {
+    "id": 9,
+    "name": "Home & Living",
+    "icon": "🏠"
+  },
+  {
+    "id": 10,
+    "name": "Sports",
+    "icon": "⚽"
+  },
+  {
+    "id": 11,
+    "name": "Local Heritage",
+    "icon": "🇳🇵"
+  }
+]

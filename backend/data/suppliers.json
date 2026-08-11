@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Rolex SA",
+    "contactPerson": "Hans Meier",
+    "email": "trade@rolex-dist.com",
+    "phone": "+41 22 302 22 00",
+    "address": "Geneva",
+    "country": "Switzerland",
+    "createdAt": "2026-08-11T10:28:08.257Z"
+  },
+  {
+    "id": 2,
+    "name": "Bulgari Group",
+    "contactPerson": "Giulia Rossi",
+    "email": "wholesale@bulgari-dist.com",
+    "phone": "+39 06 6969 3001",
+    "country": "Italy",
+    "address": "Rome",
+    "createdAt": "2026-08-11T10:28:08.257Z"
+  },
+  {
+    "id": 3,
+    "name": "Cartier International",
+    "contactPerson": "Marie Laurent",
+    "email": "b2b@cartier-dist.com",
+    "phone": "+33 1 58 18 78 00",
+    "country": "France",
+    "address": "Paris",
+    "createdAt": "2026-08-11T10:28:08.257Z"
+  },
+  {
+    "id": 4,
+    "name": "LVMH Distribution",
+    "contactPerson": "Jean Dubois",
+    "email": "partners@lvmh-dist.com",
+    "phone": "+33 1 44 13 22 22",
+    "country": "France",
+    "address": "Paris",
+    "createdAt": "2026-08-11T10:28:08.257Z"
+  },
+  {
+    "id": 5,
+    "name": "Estée Lauder Companies",
+    "contactPerson": "Sarah Cohen",
+    "email": "trade@elc-dist.com",
+    "phone": "+1 212 572 4200",
+    "country": "USA",
+    "address": "New York",
+    "createdAt": "2026-08-11T10:28:08.257Z"
+  },
+  {
+    "id": 6,
+    "name": "Rolls-Royce Motor Cars",
+    "contactPerson": "Charles Whitmore",
+    "email": "dealers@rr-motorcars.com",
+    "phone": "+44 1243 384000",
+    "country": "United Kingdom",
+    "address": "Goodwood",
+    "createdAt": "2026-08-11T10:28:08.257Z"
+  },
+  {
+    "id": 7,
+    "name": "Apple Distribution International",
+    "contactPerson": "Emma Byrne",
+    "email": "channel@apple-dist.com",
+    "phone": "+353 1 850 946 946",
+    "country": "Ireland",
+    "address": "Cork",
+    "createdAt": "2026-08-11T10:28:08.257Z"
+  },
+  {
+    "id": 8,
+    "name": "Petrossian Caviar House",
+    "contactPerson": "Armen Petrosyan",
+    "email": "export@petrossian.com",
+    "phone": "+33 1 44 11 32 22",
+    "country": "France",
+    "address": "Paris",
+    "createdAt": "2026-08-11T10:28:08.257Z"
+  },
+  {
+    "id": 9,
+    "name": "Baccarat Crystal",
+    "contactPerson": "Isabelle Fontaine",
+    "email": "trade@baccarat.com",
+    "phone": "+33 1 42 65 36 26",
+    "country": "France",
+    "address": "Paris",
+    "createdAt": "2026-08-11T10:28:08.257Z"
+  },
+  {
+    "id": 10,
+    "name": "Himalayan Heritage Traders",
+    "contactPerson": "Sunita Sherpa",
+    "email": "sales@himalayanheritage.com.np",
+    "phone": "+977 1 4441234",
+    "country": "Nepal",
+    "address": "Kathmandu",
+    "createdAt": "2026-08-11T10:28:08.257Z"
+  },
+  {
+    "id": 11,
+    "name": "Ilam Tea Estates",
+    "contactPerson": "Bikash Rai",
+    "email": "export@ilamtea.com.np",
+    "phone": "+977 27 520123",
+    "country": "Nepal",
+    "address": "Ilam",
+    "createdAt": "2026-08-11T10:28:08.257Z"
+  },
+  {
+    "id": 12,
+    "name": "Khukuri House Nepal",
+    "contactPerson": "Prakash Thapa",
+    "email": "wholesale@khukurihouse.com.np",
+    "phone": "+977 1 4225678",
+    "country": "Nepal",
+    "address": "Kathmandu",
+    "createdAt": "2026-08-11T10:28:08.257Z"
+  }
+]

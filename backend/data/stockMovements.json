@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "productId": 1,
+    "type": "in",
+    "quantity": 10,
+    "reason": "Initial stock intake",
+    "userId": 1,
+    "date": "2026-07-12T10:28:08.279Z"
+  },
+  {
+    "id": 2,
+    "productId": 1,
+    "type": "out",
+    "quantity": 6,
+    "reason": "Sold to customer",
+    "userId": 1,
+    "date": "2026-08-01T10:28:08.279Z"
+  },
+  {
+    "id": 3,
+    "productId": 25,
+    "type": "in",
+    "quantity": 1,
+    "reason": "Initial stock intake",
+    "userId": 1,
+    "date": "2026-07-22T10:28:08.279Z"
+  },
+  {
+    "id": 4,
+    "productId": 33,
+    "type": "in",
+    "quantity": 15,
+    "reason": "Initial stock intake",
+    "userId": 1,
+    "date": "2026-07-27T10:28:08.279Z"
+  },
+  {
+    "id": 5,
+    "productId": 33,
+    "type": "out",
+    "quantity": 5,
+    "reason": "Sold to restaurant partner",
+    "userId": 2,
+    "date": "2026-08-08T10:28:08.279Z"
+  }
+]

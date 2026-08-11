@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Dashboard · Trackify</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+<div class="app-shell" style="flex-direction: column">
+
+    <!-- TOPBAR -->
+    <div id="topbar" class="topbar"></div>
+
+    <div class="body-wrap">
+
+        <!-- SIDEBAR -->
+        <div id="sidebar" class="sidebar"></div>
+
+        <!-- MAIN CONTENT -->
+        <div class="main">
+
+            <!-- PAGE HEADER -->
+            <div class="page-header">
+                <h2>Dashboard</h2>
+                <span class="count-pill" id="welcomeMsg"></span>
+            </div>
+
+
+            <!-- STATISTICS -->
+            <div class="stats-grid" id="statsGrid"></div>
+
+
+            <!-- LOW STOCK -->
+            <div class="category-section">
+
+                <h3 class="category-title">
+                    ⚠️ Low Stock Alerts
+                </h3>
+
+                <div id="lowStockGrid" class="product-grid"></div>
+
+            </div>
+
+
+            <!-- RECENT STOCK MOVEMENTS -->
+            <div class="category-section">
+
+                <h3 class="category-title">
+                    📋 Recent Stock Movements
+                </h3>
+
+                <div class="table-wrap">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Product</th>
+                                <th>Type</th>
+                                <th>Qty</th>
+                                <th>Reason</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="movementsBody"></tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<!-- ==================================================
+     API
+================================================== -->
+
+<script src="js/api.js"></script>
+
+
+<!-- ==================================================
+     SHELL
+================================================== -->
+
+<script src="js/shell.js"></script>
+
+
+<script>
+
+/* ==================================================
+   TRACKIFY DASHBOARD
+================================================== */
+
+
+/* --------------------------------------------------
+   RENDER SHELL
+-------------------------------------------------- */
+
+renderShell('dashboard');
+
+renderSidebarCategories();
+
+
+/* --------------------------------------------------
+   USER
+-------------------------------------------------- */
+
+const user = getUser();
+
+const welcomeMsg = document.getElementById('welcomeMsg');
+
+if (welcomeMsg) {
+
+    welcomeMsg.textContent =
+        `Welcome back, ${user?.name || 'there'} 👋`;
+
+}
+
+
+/* ==================================================
+   IMAGE URL HELPER
+================================================== */
+
+/*
+    Your images are stored like:
+
+    Trackify/
+        backend/
+            uploads/
+                products/
+                    product.svg
+
+    Backend serves them through:
+
+    http://localhost:4000/uploads/products/product.svg
+*/
+
+function getProductImageUrl(image) {
+
+    /* ---------------------------------------------
+       NO IMAGE
+    --------------------------------------------- */
+
+    if (!image) {
+
+        return createImagePlaceholder();
+
+    }
+
+
+    let imagePath = String(image).trim();
+
+
+    /* ---------------------------------------------
+       Already a complete URL
+    --------------------------------------------- */
+
+    if (
+        imagePath.startsWith('http://') ||
+        imagePath.startsWith('https://') ||
+        imagePath.startsWith('data:')
+    ) {
+
+        return imagePath;
+
+    }
+
+
+    /* ---------------------------------------------
+       Remove Windows path if database accidentally
+       contains one
+    --------------------------------------------- */
+
+    imagePath = imagePath.replace(/\\/g, '/');
+
+
+    /* ---------------------------------------------
+       Remove leading ./ 
+    --------------------------------------------- */
+
+    imagePath = imagePath.replace(/^\.\/+/, '');
+
+
+    /* ---------------------------------------------
+       If database contains:
+
+       /uploads/products/image.svg
+
+       keep it.
+    --------------------------------------------- */
+
+    if (imagePath.startsWith('/uploads/')) {
+
+        return `${window.location.origin}${imagePath}`;
+
+    }
+
+
+    /* ---------------------------------------------
+       If database contains:
+
+       uploads/products/image.svg
+    --------------------------------------------- */
+
+    if (imagePath.startsWith('uploads/')) {
+
+        return `${window.location.origin}/${imagePath}`;
+
+    }
+
+
+    /* ---------------------------------------------
+       If database contains:
+
+       products/image.svg
+
+       add /uploads/
+    --------------------------------------------- */
+
+    if (imagePath.startsWith('products/')) {
+
+        return `${window.location.origin}/uploads/${imagePath}`;
+
+    }
+
+
+    /* ---------------------------------------------
+       If database contains only:
+
+       image.svg
+
+       assume it is inside:
+
+       uploads/products/
+    --------------------------------------------- */
+
+    return `${window.location.origin}/uploads/products/${imagePath}`;
+
+}
+
+
+/* ==================================================
+   IMAGE PLACEHOLDER
+================================================== */
+
+function createImagePlaceholder() {
+
+    return `
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="400"
+            height="300"
+            viewBox="0 0 400 300"
+        >
+            <rect
+                width="400"
+                height="300"
+                fill="#eeeeee"
+            />
+
+            <text
+                x="200"
+                y="145"
+                text-anchor="middle"
+                font-family="Arial"
+                font-size="20"
+                fill="#777"
+            >
+                No Image
+            </text>
+
+            <text
+                x="200"
+                y="175"
+                text-anchor="middle"
+                font-family="Arial"
+                font-size="14"
+                fill="#999"
+            >
+                Trackify
+            </text>
+        </svg>
+    `;
+
+}
+
+
+/* ==================================================
+   IMAGE ERROR HANDLER
+================================================== */
+
+function handleProductImageError(img) {
+
+    console.warn(
+        'Trackify: Product image could not be loaded:',
+        img.src
+    );
+
+
+    /* Prevent infinite error loop */
+
+    img.onerror = null;
+
+
+    img.src =
+        'data:image/svg+xml;charset=UTF-8,' +
+        encodeURIComponent(`
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="400"
+                height="300"
+                viewBox="0 0 400 300"
+            >
+                <rect
+                    width="400"
+                    height="300"
+                    fill="#eeeeee"
+                />
+
+                <text
+                    x="200"
+                    y="145"
+                    text-anchor="middle"
+                    font-family="Arial"
+                    font-size="20"
+                    fill="#777"
+                >
+                    Image unavailable
+                </text>
+
+                <text
+                    x="200"
+                    y="175"
+                    text-anchor="middle"
+                    font-family="Arial"
+                    font-size="14"
+                    fill="#999"
+                >
+                    Trackify
+                </text>
+            </svg>
+        `);
+
+}
+
+
+/* ==================================================
+   LOAD DASHBOARD
+================================================== */
+
+async function loadDashboard() {
+
+    try {
+
+        console.log('Trackify: Loading dashboard...');
+
+
+        const {
+            totals,
+            lowStockProducts,
+            recentMovements
+        } = await api('/stats/dashboard');
+
+
+        /* ---------------------------------------------
+           STATISTICS
+        --------------------------------------------- */
+
+        document.getElementById('statsGrid').innerHTML = `
+
+            <div class="stat-card gold">
+
+                <div class="label">
+                    Total Products
+                </div>
+
+                <div class="value">
+                    ${totals.products}
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="label">
+                    Total Units in Stock
+                </div>
+
+                <div class="value">
+                    ${totals.totalUnits}
+                </div>
+
+            </div>
+
+
+            <div class="stat-card gold">
+
+                <div class="label">
+                    Inventory Value
+                </div>
+
+                <div class="value">
+                    ${money(totals.totalStockValue)}
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="label">
+                    Suppliers
+                </div>
+
+                <div class="value">
+                    ${totals.suppliers}
+                </div>
+
+            </div>
+
+
+            <div class="stat-card alert">
+
+                <div class="label">
+                    Low Stock Items
+                </div>
+
+                <div class="value">
+                    ${totals.lowStockCount}
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="label">
+                    Users
+                </div>
+
+                <div class="value">
+                    ${totals.users}
+                </div>
+
+            </div>
+
+        `;
+
+
+        /* ---------------------------------------------
+           LOW STOCK PRODUCTS
+        --------------------------------------------- */
+
+        const lowStockGrid =
+            document.getElementById('lowStockGrid');
+
+
+        if (
+            !lowStockProducts ||
+            lowStockProducts.length === 0
+        ) {
+
+            lowStockGrid.innerHTML = `
+
+                <div
+                    class="empty-state"
+                    style="grid-column:1/-1"
+                >
+
+                    <div class="icon">
+                        ✅
+                    </div>
+
+                    All products are well stocked.
+
+                </div>
+
+            `;
+
+        } else {
+
+            lowStockGrid.innerHTML =
+                lowStockProducts
+                    .map(productCardHTML)
+                    .join('');
+
+        }
+
+
+        /* ---------------------------------------------
+           RECENT MOVEMENTS
+        --------------------------------------------- */
+
+        const movementsBody =
+            document.getElementById('movementsBody');
+
+
+        if (
+            recentMovements &&
+            recentMovements.length
+        ) {
+
+            movementsBody.innerHTML =
+
+                recentMovements
+                    .map((m) => `
+
+                        <tr>
+
+                            <td>
+                                ${new Date(
+                                    m.date
+                                ).toLocaleDateString()}
+                            </td>
+
+                            <td>
+                                ${m.productName}
+                            </td>
+
+                            <td>
+
+                                <span
+                                    class="badge ${m.type}"
+                                >
+
+                                    ${
+                                        m.type === 'in'
+                                            ? 'STOCK IN'
+                                            : 'STOCK OUT'
+                                    }
+
+                                </span>
+
+                            </td>
+
+                            <td>
+                                ${m.quantity}
+                            </td>
+
+                            <td>
+                                ${m.reason}
+                            </td>
+
+                        </tr>
+
+                    `)
+                    .join('');
+
+        } else {
+
+            movementsBody.innerHTML = `
+
+                <tr>
+
+                    <td
+                        colspan="5"
+                        style="
+                            text-align:center;
+                            color:var(--text-dim);
+                            padding:24px
+                        "
+                    >
+
+                        No stock movements yet.
+
+                    </td>
+
+                </tr>
+
+            `;
+
+        }
+
+
+        console.log(
+            'Trackify: Dashboard loaded successfully.'
+        );
+
+
+    } catch (err) {
+
+        console.error(
+            'Trackify dashboard error:',
+            err
+        );
+
+
+        showToast(
+            err.message,
+            'error'
+        );
+
+    }
+
+}
+
+
+/* ==================================================
+   PRODUCT CARD
+================================================== */
+
+function productCardHTML(p) {
+
+    const low =
+        p.stock <= p.lowStockThreshold;
+
+
+    const imageUrl =
+        getProductImageUrl(p.image);
+
+
+    console.log(
+        'Trackify product:',
+        p.name,
+        '| image:',
+        p.image,
+        '| URL:',
+        imageUrl
+    );
+
+
+    return `
+
+        <div
+            class="product-card"
+            onclick="location.href='product.html?id=${p.id}'"
+        >
+
+            <img
+                src="${imageUrl}"
+                alt="${p.name || 'Product'}"
+                loading="lazy"
+                onerror="handleProductImageError(this)"
+            />
+
+
+            <div class="product-body">
+
+                <div class="pname">
+                    ${p.name}
+                </div>
+
+
+                <div class="pprice">
+                    ${money(p.price)}
+                </div>
+
+
+                <div
+                    class="pstock ${
+                        low ? 'low' : ''
+                    }"
+                >
+
+                    ${
+                        low
+                            ? '⚠️ '
+                            : ''
+                    }
+
+                    ${p.stock} left
+
+                </div>
+
+            </div>
+
+        </div>
+
+    `;
+
+}
+
+
+/* ==================================================
+   START DASHBOARD
+================================================== */
+
+loadDashboard();
+
+
+/* ==================================================
+   ADD PRODUCT REDIRECT
+================================================== */
+
+if (
+    new URLSearchParams(
+        location.search
+    ).get('add') === '1'
+) {
+
+    location.href =
+        'products.html?add=1';
+
+}
+
+</script>
+
+</body>
+</html>

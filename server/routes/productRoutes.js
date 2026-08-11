@@ -1,0 +1,4 @@
+const r=require("express").Router(),c=require("../controllers/productController"),a=require("../middleware/authMiddleware"),multer=require("multer"),path=require("path"),fs=require("fs");
+const dir=path.join(__dirname,"..","uploads");fs.mkdirSync(dir,{recursive:true});
+const upload=multer({storage:multer.diskStorage({destination:(q,f,cb)=>cb(null,dir),filename:(q,f,cb)=>cb(null,`${Date.now()}-${Math.round(Math.random()*1e9)}${path.extname(f.originalname).toLowerCase()}`)}),limits:{fileSize:5*1024*1024},fileFilter:(q,f,cb)=>/^image\/(jpeg|png|gif|webp)$/.test(f.mimetype)?cb(null,true):cb(new Error("Only JPG, PNG, GIF, or WEBP images are allowed."))});
+r.use(a);r.get("/",c.list);r.get("/:id",c.get);r.post("/",upload.single("image"),c.create);r.put("/:id",upload.single("image"),c.update);r.delete("/:id",c.remove);module.exports=r;

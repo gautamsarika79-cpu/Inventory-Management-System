@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Users · Trackify</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app-shell" style="flex-direction:column">
+    <div id="topbar" class="topbar"></div>
+    <div class="body-wrap">
+      <div id="sidebar" class="sidebar"></div>
+      <div class="main">
+        <div class="page-header">
+          <h2>User Management <span class="count-pill" id="resultCount"></span></h2>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Joined</th><th></th></tr></thead>
+            <tbody id="usersBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="js/api.js"></script>
+<script src="js/shell.js"></script>
+<script>
+  renderShell('users');
+  renderSidebarCategories();
+  const me = getUser();
+
+  if (me?.role !== 'admin') {
+    document.querySelector('.main').innerHTML = `<div class="empty-state"><div class="icon">🔒</div>Admin access required to view this page.</div>`;
+  } else {
+    loadUsers();
+  }
+
+  async function loadUsers() {
+    try {
+      const { users, count } = await api('/users');
+      document.getElementById('resultCount').textContent = count;
+      document.getElementById('usersBody').innerHTML = users.map((u) => `
+        <tr>
+          <td><strong>${u.name}</strong> ${u.id === me.id ? '(you)' : ''}</td>
+          <td>${u.email}</td>
+          <td><span class="badge ${u.role}">${u.role}</span></td>
+          <td>${new Date(u.createdAt).toLocaleDateString()}</td>
+          <td>
+            ${u.id !== me.id ? `
+              <button class="btn btn-secondary btn-sm" onclick="toggleRole(${u.id}, '${u.role}')">${u.role === 'admin' ? 'Make User' : 'Make Admin'}</button>
+              <button class="btn btn-danger btn-sm" onclick="deleteUser(${u.id}, '${u.name.replace(/'/g, "\\'")}')">Delete</button>
+            ` : '<span style="color:var(--text-dim);font-size:12px">—</span>'}
+          </td>
+        </tr>`).join('');
+    } catch (err) {
+      showToast(err.message, 'error');
+    }
+  }
+
+  async function toggleRole(id, currentRole) {
+    const newRole = currentRole === 'admin' ? 'user' : 'admin';
+    try {
+      await api(`/users/${id}/role`, { method: 'PUT', body: { role: newRole } });
+      showToast('Role updated.');
+      loadUsers();
+    } catch (err) {
+      showToast(err.message, 'error');
+    }
+  }
+
+  async function deleteUser(id, name) {
+    if (!confirm(`Delete user "${name}"?`)) return;
+    try {
+      await api(`/users/${id}`, { method: 'DELETE' });
+      showToast('User deleted.');
+      loadUsers();
+    } catch (err) {
+      showToast(err.message, 'error');
+    }
+  }
+</script>
+</body>
+</html>

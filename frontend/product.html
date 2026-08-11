@@ -1,0 +1,794 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Product Details · Trackify</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    .product-detail-image {
+      width: 100%;
+      max-width: 420px;
+      height: 420px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+      border-radius: 16px;
+      background: #f7f7f7;
+      padding: 20px;
+    }
+
+    .image-error {
+      width: 100%;
+      max-width: 420px;
+      height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 10px;
+      border-radius: 16px;
+      background: #f5f5f5;
+      color: #777;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .image-error-icon {
+      font-size: 48px;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr);
+      gap: 40px;
+      align-items: center;
+    }
+
+    @media (max-width: 800px) {
+      .detail-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="app-shell" style="flex-direction: column">
+
+    <div id="topbar" class="topbar"></div>
+
+    <div class="body-wrap">
+
+      <div id="sidebar" class="sidebar"></div>
+
+      <div class="main">
+
+        <button
+          class="btn btn-secondary btn-sm"
+          onclick="history.back()"
+          style="margin-bottom: 16px"
+        >
+          ← Back
+        </button>
+
+        <div
+          class="table-wrap"
+          style="padding: 24px; margin-bottom: 24px"
+        >
+          <div
+            class="detail-grid"
+            id="detailContainer"
+          ></div>
+        </div>
+
+        <div class="category-section">
+
+          <div class="page-header">
+
+            <h3
+              class="category-title"
+              style="margin: 0"
+            >
+              📋 Stock Movement History
+            </h3>
+
+            <button
+              class="btn btn-primary btn-sm"
+              id="recordMoveBtn"
+            >
+              + Record Movement
+            </button>
+
+          </div>
+
+          <div class="table-wrap">
+
+            <table>
+
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Type</th>
+                  <th>Qty</th>
+                  <th>Reason</th>
+                  <th>By</th>
+                </tr>
+              </thead>
+
+              <tbody id="movementsBody"></tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- STOCK MOVEMENT MODAL -->
+
+  <div
+    class="modal-overlay"
+    id="moveModal"
+  >
+
+    <div class="modal">
+
+      <span
+        class="modal-close"
+        id="closeMoveModal"
+      >
+        &times;
+      </span>
+
+      <h3>Record Stock Movement</h3>
+
+      <form id="moveForm">
+
+        <div class="field">
+
+          <label>Type</label>
+
+          <select
+            id="mType"
+            required
+          >
+            <option value="in">
+              Stock In (received)
+            </option>
+
+            <option value="out">
+              Stock Out (sold/removed)
+            </option>
+          </select>
+
+        </div>
+
+        <div class="field">
+
+          <label>Quantity</label>
+
+          <input
+            type="number"
+            id="mQty"
+            min="1"
+            required
+          />
+
+        </div>
+
+        <div class="field">
+
+          <label>Reason</label>
+
+          <input
+            type="text"
+            id="mReason"
+            placeholder="e.g. Sold to customer"
+          />
+
+        </div>
+
+        <div class="modal-actions">
+
+          <button
+            type="button"
+            class="btn btn-secondary"
+            id="cancelMove"
+            style="flex: 1"
+          >
+            Cancel
+          </button>
+
+          <button
+            type="submit"
+            class="btn btn-primary"
+            style="flex: 1"
+          >
+            Save
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <script src="js/api.js"></script>
+  <script src="js/shell.js"></script>
+
+  <script>
+
+    renderShell("products");
+    renderSidebarCategories();
+
+
+    /* =========================================================
+       TRACKIFY BACKEND
+       ========================================================= */
+
+    const TRACKIFY_SERVER = "http://localhost:4000";
+
+
+    /* =========================================================
+       PRODUCT ID
+       ========================================================= */
+
+    const productId =
+      new URLSearchParams(location.search).get("id");
+
+    if (!productId) {
+
+      window.location.href = "products.html";
+
+    }
+
+
+    /* =========================================================
+       IMAGE URL FIX
+       ========================================================= */
+
+    function getProductImage(image) {
+
+      if (!image) {
+        return "";
+      }
+
+      image = String(image).trim();
+
+      /*
+       Already a complete URL
+      */
+
+      if (
+        image.startsWith("http://") ||
+        image.startsWith("https://") ||
+        image.startsWith("data:")
+      ) {
+
+        return image;
+
+      }
+
+
+      /*
+       Convert Windows backslashes
+      */
+
+      image = image.replace(/\\/g, "/");
+
+
+      /*
+       If database contains something like:
+
+       /uploads/products/iphone-pro.svg
+       */
+
+      if (image.startsWith("/uploads/")) {
+
+        return TRACKIFY_SERVER + image;
+
+      }
+
+
+      /*
+       If database contains:
+
+       uploads/products/iphone-pro.svg
+       */
+
+      if (image.startsWith("uploads/")) {
+
+        return TRACKIFY_SERVER + "/" + image;
+
+      }
+
+
+      /*
+       If database contains:
+
+       /products/iphone-pro.svg
+       */
+
+      if (image.startsWith("/products/")) {
+
+        return TRACKIFY_SERVER + "/uploads" + image;
+
+      }
+
+
+      /*
+       If database only contains:
+
+       iphone-pro.svg
+
+       put it inside uploads/products
+       */
+
+      return (
+        TRACKIFY_SERVER +
+        "/uploads/products/" +
+        image.replace(/^\/+/, "")
+      );
+
+    }
+
+
+    /* =========================================================
+       IMAGE ERROR HANDLER
+       ========================================================= */
+
+    function imageError(img, name) {
+
+      const wrapper = document.createElement("div");
+
+      wrapper.className = "image-error";
+
+      wrapper.innerHTML = `
+        <div class="image-error-icon">📦</div>
+        <strong>Image unavailable</strong>
+        <small>${name || "Product"}</small>
+      `;
+
+      img.replaceWith(wrapper);
+
+    }
+
+
+    /* =========================================================
+       ESCAPE HTML
+       ========================================================= */
+
+    function escapeHtml(value) {
+
+      if (value === null || value === undefined) {
+        return "";
+      }
+
+      return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+    }
+
+
+    /* =========================================================
+       LOAD PRODUCT
+       ========================================================= */
+
+    async function loadDetail() {
+
+      try {
+
+        const result = await api(
+          `/products/${productId}`
+        );
+
+        const product = result.product;
+        const supplier = result.supplier;
+        const movements = result.movements || [];
+
+        if (!product) {
+
+          throw new Error(
+            "Product was not found."
+          );
+
+        }
+
+
+        const low =
+          Number(product.stock) <=
+          Number(product.lowStockThreshold);
+
+
+        const imageUrl =
+          getProductImage(product.image);
+
+
+        console.log(
+          "Trackify product image:",
+          product.image
+        );
+
+        console.log(
+          "Trackify final image URL:",
+          imageUrl
+        );
+
+
+        document.getElementById(
+          "detailContainer"
+        ).innerHTML = `
+
+          <div>
+
+            ${
+              imageUrl
+                ? `
+                  <img
+                    class="product-detail-image"
+                    src="${escapeHtml(imageUrl)}"
+                    alt="${escapeHtml(product.name)}"
+                    onerror="imageError(this, '${escapeHtml(product.name)}')"
+                  />
+                `
+                : `
+                  <div class="image-error">
+                    <div class="image-error-icon">📦</div>
+                    <strong>No product image</strong>
+                    <small>${escapeHtml(product.name)}</small>
+                  </div>
+                `
+            }
+
+          </div>
+
+
+          <div class="detail-info">
+
+            <h3>
+              ${escapeHtml(product.name)}
+            </h3>
+
+
+            <div class="sku">
+
+              SKU:
+              ${escapeHtml(product.sku)}
+
+              &nbsp;·&nbsp;
+
+              Category:
+              ${escapeHtml(product.category)}
+
+            </div>
+
+
+            <div class="price">
+
+              ${money(product.price)}
+
+            </div>
+
+
+            <div
+              class="pstock ${low ? "low" : ""}"
+              style="
+                font-size:14px;
+                margin-bottom:12px
+              "
+            >
+
+              ${
+                low
+                  ? "⚠️ Low stock — "
+                  : ""
+              }
+
+              ${product.stock}
+
+              units in stock
+
+              (alert at
+              ${product.lowStockThreshold})
+
+            </div>
+
+
+            <p
+              style="
+                color:var(--text-dim);
+                font-size:14px;
+                line-height:1.6
+              "
+            >
+
+              ${
+                escapeHtml(
+                  product.description ||
+                  "No description provided."
+                )
+              }
+
+            </p>
+
+
+            ${
+              supplier
+                ? `
+                  <p
+                    style="
+                      font-size:13px;
+                      color:var(--text-dim)
+                    "
+                  >
+
+                    🏭 Supplied by
+
+                    <strong
+                      style="color:var(--text)"
+                    >
+                      ${escapeHtml(supplier.name)}
+                    </strong>
+
+                    ${
+                      supplier.country
+                        ? `(${escapeHtml(supplier.country)})`
+                        : ""
+                    }
+
+                  </p>
+                `
+                : ""
+            }
+
+          </div>
+
+        `;
+
+
+        renderMovements(movements);
+
+      } catch (err) {
+
+        console.error(
+          "Trackify product error:",
+          err
+        );
+
+        showToast(
+          err.message ||
+          "Unable to load product.",
+          "error"
+        );
+
+      }
+
+    }
+
+
+    /* =========================================================
+       MOVEMENTS
+       ========================================================= */
+
+    function renderMovements(movements) {
+
+      document.getElementById(
+        "movementsBody"
+      ).innerHTML = movements.length
+
+        ? movements
+            .map(
+              (m) => `
+
+                <tr>
+
+                  <td>
+                    ${new Date(
+                      m.date
+                    ).toLocaleString()}
+                  </td>
+
+                  <td>
+
+                    <span
+                      class="badge ${escapeHtml(m.type)}"
+                    >
+
+                      ${
+                        m.type === "in"
+                          ? "STOCK IN"
+                          : "STOCK OUT"
+                      }
+
+                    </span>
+
+                  </td>
+
+                  <td>
+                    ${escapeHtml(m.quantity)}
+                  </td>
+
+                  <td>
+                    ${escapeHtml(m.reason || "")}
+                  </td>
+
+                  <td>
+                    ${escapeHtml(m.userName || "")}
+                  </td>
+
+                </tr>
+
+              `
+            )
+            .join("")
+
+        : `
+
+          <tr>
+
+            <td
+              colspan="5"
+              style="
+                text-align:center;
+                color:var(--text-dim);
+                padding:24px
+              "
+            >
+              No movements recorded yet.
+            </td>
+
+          </tr>
+
+        `;
+
+    }
+
+
+    /* =========================================================
+       MOVEMENT MODAL
+       ========================================================= */
+
+    document
+      .getElementById("recordMoveBtn")
+      .addEventListener(
+        "click",
+        () => {
+
+          document
+            .getElementById("moveModal")
+            .classList.add("show");
+
+        }
+      );
+
+
+    document
+      .getElementById("closeMoveModal")
+      .addEventListener(
+        "click",
+        closeMoveModal
+      );
+
+
+    document
+      .getElementById("cancelMove")
+      .addEventListener(
+        "click",
+        closeMoveModal
+      );
+
+
+    function closeMoveModal() {
+
+      document
+        .getElementById("moveModal")
+        .classList.remove("show");
+
+      document
+        .getElementById("moveForm")
+        .reset();
+
+    }
+
+
+    /* =========================================================
+       SAVE MOVEMENT
+       ========================================================= */
+
+    document
+      .getElementById("moveForm")
+      .addEventListener(
+        "submit",
+        async (e) => {
+
+          e.preventDefault();
+
+          try {
+
+            await api(
+              "/stock-movements",
+              {
+                method: "POST",
+
+                body: {
+
+                  productId:
+                    Number(productId),
+
+                  type:
+                    document
+                      .getElementById("mType")
+                      .value,
+
+                  quantity:
+                    Number(
+                      document
+                        .getElementById("mQty")
+                        .value
+                    ),
+
+                  reason:
+                    document
+                      .getElementById("mReason")
+                      .value
+                      .trim()
+
+                }
+
+              }
+            );
+
+
+            showToast(
+              "Stock movement recorded."
+            );
+
+
+            closeMoveModal();
+
+            loadDetail();
+
+          } catch (err) {
+
+            console.error(
+              "Stock movement error:",
+              err
+            );
+
+            showToast(
+              err.message,
+              "error"
+            );
+
+          }
+
+        }
+      );
+
+
+    /* =========================================================
+       START
+       ========================================================= */
+
+    loadDetail();
+
+  </script>
+
+</body>
+</html>
