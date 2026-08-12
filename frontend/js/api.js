@@ -105,8 +105,8 @@ async function api(path, options = {}) {
         console.error("Trackify fetch failed:", error);
 
         throw new Error(
-            "Cannot connect to Trackify server. Make sure the backend is running on http://localhost:4000"
-        );
+    "Cannot connect to Trackify server. Please try again."
+);
     }
 
     let data = {};
