@@ -9,9 +9,9 @@
     "supplierId": 1,
     "sku": "WAT-ROL-001",
     "description": "Iconic diving chronometer in Oystersteel.",
-    "image": "https://placehold.co/400x400/1a1a2e/ffd700?text=Rolex%20Submariner%20Date",
+    "image": "23b6f08b73e8bda3bcd353cd80b662f9-1786500599481-83158.jpg",
     "createdAt": "2026-08-11T10:28:08.260Z",
-    "updatedAt": "2026-08-11T16:41:50.373Z"
+    "updatedAt": "2026-08-12T02:09:59.491Z"
   },
   {
     "id": 2,
@@ -23,9 +23,9 @@
     "supplierId": 2,
     "sku": "WAT-BUL-002",
     "description": "Ultra-thin Italian design masterpiece.",
-    "image": "https://placehold.co/400x400/2c2c54/ffd700?text=Bulgari%20Octo%20Finissimo",
+    "image": "bf4a938555d8ee556138ff5a2e538fed-1786500640462-2089.jpg",
     "createdAt": "2026-08-11T10:28:08.260Z",
-    "updatedAt": "2026-08-11T10:28:08.260Z"
+    "updatedAt": "2026-08-12T02:10:40.475Z"
   },
   {
     "id": 3,
@@ -37,9 +37,9 @@
     "supplierId": 3,
     "sku": "WAT-CAR-003",
     "description": "Timeless square-cased aviator watch.",
-    "image": "https://placehold.co/400x400/1a1a2e/ffd700?text=Cartier%20Santos%20de%20Cartier",
+    "image": "e0c7afeab4157ea28d4a0d5f7137646e-1786500674139-12577.jpg",
     "createdAt": "2026-08-11T10:28:08.260Z",
-    "updatedAt": "2026-08-11T10:28:08.260Z"
+    "updatedAt": "2026-08-12T02:11:14.148Z"
   },
   {
     "id": 4,
@@ -51,9 +51,9 @@
     "supplierId": 1,
     "sku": "WAT-PAT-004",
     "description": "Legendary luxury sports watch.",
-    "image": "https://placehold.co/400x400/1a1a2e/ffd700?text=Patek%20Philippe%20Nautilus",
+    "image": "7f905612729c26f94044b8a5be4c44e6-1786500713571-53986.jpg",
     "createdAt": "2026-08-11T10:28:08.260Z",
-    "updatedAt": "2026-08-11T10:28:08.260Z"
+    "updatedAt": "2026-08-12T02:11:53.580Z"
   },
   {
     "id": 5,
@@ -65,9 +65,9 @@
     "supplierId": 1,
     "sku": "WAT-OME-005",
     "description": "The first watch worn on the moon.",
-    "image": "https://placehold.co/400x400/2c2c54/ffd700?text=Omega%20Speedmaster%20Moonwatch",
+    "image": "1883710539bc1cd9ad21b7df45ecf941-1786500743914-61249.jpg",
     "createdAt": "2026-08-11T10:28:08.260Z",
-    "updatedAt": "2026-08-11T10:28:08.260Z"
+    "updatedAt": "2026-08-12T02:12:23.920Z"
   },
   {
     "id": 6,
@@ -79,9 +79,9 @@
     "supplierId": 1,
     "sku": "WAT-AP-006",
     "description": "Octagonal bezel, tapisserie dial icon.",
-    "image": "https://placehold.co/400x400/1a1a2e/ffd700?text=Audemars%20Piguet%20Royal%20Oak",
+    "image": "7fbdaf9b59bb6d34536707932f36405c-1786500769377-78147.jpg",
     "createdAt": "2026-08-11T10:28:08.260Z",
-    "updatedAt": "2026-08-11T10:28:08.260Z"
+    "updatedAt": "2026-08-12T02:12:49.382Z"
   },
   {
     "id": 7,
@@ -93,9 +93,9 @@
     "supplierId": 4,
     "sku": "JWL-TIF-007",
     "description": "Platinum setting, 1.5ct round brilliant diamond.",
-    "image": "https://placehold.co/400x400/4a1942/ffffff?text=Tiffany%20%26%20Co.%20Diamond%20Solitaire%20Ring",
+    "image": "48ed07f163d761aa26b281f9124192b5-1786500813298-61845.jpg",
     "createdAt": "2026-08-11T10:28:08.260Z",
-    "updatedAt": "2026-08-11T10:28:08.260Z"
+    "updatedAt": "2026-08-12T02:13:33.303Z"
   },
   {
     "id": 8,
@@ -107,9 +107,9 @@
     "supplierId": 4,
     "sku": "JWL-VCA-008",
     "description": "Clover motif necklace in 18k gold.",
-    "image": "https://placehold.co/400x400/4a1942/ffd700?text=Van%20Cleef%20%26%20Arpels%20Alhambra%20Necklace",
+    "image": "de42f3f322231c6139194f49e1e9e5b7-1786500844643-69408.jpg",
     "createdAt": "2026-08-11T10:28:08.260Z",
-    "updatedAt": "2026-08-11T10:28:08.260Z"
+    "updatedAt": "2026-08-12T02:14:04.653Z"
   },
   {
     "id": 9,
@@ -121,9 +121,9 @@
     "supplierId": 2,
     "sku": "JWL-BUL-009",
     "description": "Iconic snake-coil bracelet in rose gold.",
-    "image": "https://placehold.co/400x400/4a1942/ffd700?text=Bulgari%20Serpenti%20Bracelet",
+    "image": "eec831bd02d97fc3aabbcbc800786570-1786500906815-15965.jpg",
     "createdAt": "2026-08-11T10:28:08.260Z",
-    "updatedAt": "2026-08-11T10:28:08.260Z"
+    "updatedAt": "2026-08-12T02:15:06.820Z"
   },
   {
     "id": 10,
@@ -135,9 +135,9 @@
     "supplierId": 4,
     "sku": "JWL-HW-010",
     "description": "Diamond cluster earrings, platinum setting.",
-    "image": "https://placehold.co/400x400/4a1942/ffffff?text=Harry%20Winston%20Cluster%20Earrings",
+    "image": "d2e97f140ce3a5a95bddd3e0c549ae29-1786500941429-63694.jpg",
     "createdAt": "2026-08-11T10:28:08.260Z",
-    "updatedAt": "2026-08-11T10:28:08.260Z"
+    "updatedAt": "2026-08-12T02:15:41.434Z"
   },
   {
     "id": 11,
@@ -149,9 +149,9 @@
     "supplierId": 3,
     "sku": "JWL-CAR-011",
     "description": "The world-famous screw motif bracelet.",
-    "image": "https://placehold.co/400x400/4a1942/ffd700?text=Cartier%20Love%20Bracelet",
+    "image": "636971cbcc3ba66795e7b81cced107a5-1786500994285-33882.jpg",
     "createdAt": "2026-08-11T10:28:08.260Z",
-    "updatedAt": "2026-08-11T10:28:08.260Z"
+    "updatedAt": "2026-08-12T02:16:34.290Z"
   },
   {
     "id": 12,
@@ -163,9 +163,9 @@
     "supplierId": 4,
     "sku": "FSH-HER-012",
     "description": "Handcrafted leather icon, gold hardware.",
-    "image": "https://placehold.co/400x400/3d2b1f/e8c88a?text=Herm%C3%A8s%20Birkin%2030%20Togo",
+    "image": "f85d8810edeac8bcd6e5f2ec2a6a5701-1786501051915-63758.jpg",
     "createdAt": "2026-08-11T10:28:08.260Z",
-    "updatedAt": "2026-08-11T10:28:08.260Z"
+    "updatedAt": "2026-08-12T02:17:31.941Z"
   },
   {
     "id": 13,
@@ -177,9 +177,9 @@
     "supplierId": 4,
     "sku": "FSH-CHA-013",
     "description": "Quilted lambskin, timeless silhouette.",
-    "image": "https://placehold.co/400x400/111111/ffd700?text=Chanel%20Classic%20Flap%20Bag",
+    "image": "37efbc3e83b343577dacc7b2cde14bc4-1786501082275-53246.jpg",
     "createdAt": "2026-08-11T10:28:08.260Z",
-    "updatedAt": "2026-08-11T10:28:08.260Z"
+    "updatedAt": "2026-08-12T02:18:02.286Z"
   },
   {
     "id": 14,
@@ -191,9 +191,9 @@
     "supplierId": 4,
     "sku": "FSH-LV-014",
     "description": "Monogram canvas tote, everyday luxury.",
-    "image": "https://placehold.co/400x400/3d2b1f/e8c88a?text=Louis%20Vuitton%20Neverfull%20MM",
+    "image": "33a082f0a93fe4de870a5063923a33d7-1786501111988-74029.jpg",
     "createdAt": "2026-08-11T10:28:08.260Z",
-    "updatedAt": "2026-08-11T10:28:08.260Z"
+    "updatedAt": "2026-08-12T02:18:32.013Z"
   },
   {
     "id": 15,
@@ -205,9 +205,9 @@
     "supplierId": 4,
     "sku": "FSH-GUC-015",
     "description": "Matelassé chevron leather shoulder bag.",
-    "image": "https://placehold.co/400x400/5c1a1a/ffd700?text=Gucci%20GG%20Marmont%20Bag",
+    "image": "9573691d8001285f2d3328e326bc9301-1786501158841-7666.jpg",
     "createdAt": "2026-08-11T10:28:08.260Z",
-    "updatedAt": "2026-08-11T10:28:08.260Z"
+    "updatedAt": "2026-08-12T02:19:18.847Z"
   },
   {
     "id": 16,
@@ -219,9 +219,9 @@
     "supplierId": 4,
     "sku": "FSH-DIO-016",
     "description": "Embroidered canvas tote bag.",
-    "image": "https://placehold.co/400x400/111111/ffffff?text=Dior%20Book%20Tote",
+    "image": "0b31a837bbf088a7d4983038df6c16eb-1786501208257-18137.jpg",
     "createdAt": "2026-08-11T10:28:08.260Z",
-    "updatedAt": "2026-08-11T10:28:08.260Z"
+    "updatedAt": "2026-08-12T02:20:08.262Z"
   },
   {
     "id": 17,
@@ -233,9 +233,9 @@
     "supplierId": 5,
     "sku": "SKN-LAM-017",
     "description": "Iconic Miracle Broth moisturizing cream, 60ml.",
-    "image": "https://placehold.co/400x400/0e6655/ffffff?text=La%20Mer%20Cr%C3%A8me%20de%20la%20Mer",
+    "image": "b302b8b5faf7de8d55f4c11841c9df37-1786501245009-94541.jpg",
     "createdAt": "2026-08-11T10:28:08.261Z",
-    "updatedAt": "2026-08-11T10:28:08.261Z"
+    "updatedAt": "2026-08-12T02:20:45.016Z"
   },
   {
     "id": 18,
@@ -247,9 +247,9 @@
     "supplierId": 5,
     "sku": "SKN-SK2-018",
     "description": "Pitera-infused essence, 230ml.",
-    "image": "https://placehold.co/400x400/0e6655/ffffff?text=SK-II%20Facial%20Treatment%20Essence",
+    "image": "e907fe2f4b60bbb6c01610c2fb2cabec-1786501282084-57165.jpg",
     "createdAt": "2026-08-11T10:28:08.261Z",
-    "updatedAt": "2026-08-11T10:28:08.261Z"
+    "updatedAt": "2026-08-12T02:21:22.088Z"
   },
   {
     "id": 19,
@@ -261,9 +261,9 @@
     "supplierId": 4,
     "sku": "SKN-CHA-019",
     "description": "Camellia-infused revitalizing cream.",
-    "image": "https://placehold.co/400x400/0e6655/ffd700?text=Chanel%20N%C2%B01%20De%20Chanel%20Cream",
+    "image": "1147239d56c48c1030d359ac3d3d9182-1786501315837-56089.jpg",
     "createdAt": "2026-08-11T10:28:08.261Z",
-    "updatedAt": "2026-08-11T10:28:08.261Z"
+    "updatedAt": "2026-08-12T02:21:55.842Z"
   },
   {
     "id": 20,
@@ -275,9 +275,9 @@
     "supplierId": 5,
     "sku": "SKN-EL-020",
     "description": "Repair serum, 50ml.",
-    "image": "https://placehold.co/400x400/0e6655/ffffff?text=Est%C3%A9e%20Lauder%20Advanced%20Night%20Repair",
+    "image": "876847bda92c20f931a0e5e8e9fa7e5e-1786501338998-82460.jpg",
     "createdAt": "2026-08-11T10:28:08.261Z",
-    "updatedAt": "2026-08-11T10:28:08.261Z"
+    "updatedAt": "2026-08-12T02:22:19.039Z"
   },
   {
     "id": 21,
@@ -289,9 +289,9 @@
     "supplierId": 4,
     "sku": "MKP-CHA-021",
     "description": "Hydrating shine lipstick.",
-    "image": "https://placehold.co/400x400/7d1935/ffd700?text=Chanel%20Rouge%20Coco%20Lipstick",
+    "image": "907e4fc60d620ca740554dbda2a71749-1786501379444-96535.jpg",
     "createdAt": "2026-08-11T10:28:08.261Z",
-    "updatedAt": "2026-08-11T10:28:08.261Z"
+    "updatedAt": "2026-08-12T02:22:59.451Z"
   },
   {
     "id": 22,
@@ -303,9 +303,9 @@
     "supplierId": 4,
     "sku": "MKP-DIO-022",
     "description": "Buildable, natural-finish foundation.",
-    "image": "https://placehold.co/400x400/7d1935/ffffff?text=Dior%20Backstage%20Foundation",
+    "image": "573cdb081359e277cb4287651fb3daca-1786501400707-22949.jpg",
     "createdAt": "2026-08-11T10:28:08.261Z",
-    "updatedAt": "2026-08-11T10:28:08.261Z"
+    "updatedAt": "2026-08-12T02:23:20.715Z"
   },
   {
     "id": 23,
@@ -317,9 +317,9 @@
     "supplierId": 5,
     "sku": "MKP-CT-023",
     "description": "Iconic nude-rose eyeshadow palette.",
-    "image": "https://placehold.co/400x400/7d1935/ffd700?text=Charlotte%20Tilbury%20Pillow%20Talk%20Palette",
+    "image": "af6de1e67766886a74a91e7a61588b96-1786501425148-83461.jpg",
     "createdAt": "2026-08-11T10:28:08.261Z",
-    "updatedAt": "2026-08-11T10:28:08.261Z"
+    "updatedAt": "2026-08-12T02:23:45.154Z"
   },
   {
     "id": 24,
@@ -331,9 +331,9 @@
     "supplierId": 4,
     "sku": "MKP-YSL-024",
     "description": "Satin-finish luxury lipstick.",
-    "image": "https://placehold.co/400x400/7d1935/ffd700?text=YSL%20Rouge%20Pur%20Couture",
+    "image": "4cab11c598df187e1e32cd7b335dcdfa-1786501453786-36583.jpg",
     "createdAt": "2026-08-11T10:28:08.261Z",
-    "updatedAt": "2026-08-11T10:28:08.261Z"
+    "updatedAt": "2026-08-12T02:24:13.791Z"
   },
   {
     "id": 25,
@@ -345,9 +345,9 @@
     "supplierId": 6,
     "sku": "CAR-RR-025",
     "description": "The pinnacle of automotive luxury.",
-    "image": "https://placehold.co/400x400/0b0c10/ffd700?text=Rolls-Royce%20Phantom",
+    "image": "d2f33ecac6bb6e14d4c2f2b3728bf524-1786501547815-42033.jpg",
     "createdAt": "2026-08-11T10:28:08.261Z",
-    "updatedAt": "2026-08-11T10:28:08.261Z"
+    "updatedAt": "2026-08-12T02:25:47.825Z"
   },
   {
     "id": 26,
@@ -359,9 +359,9 @@
     "supplierId": 6,
     "sku": "CAR-BEN-026",
     "description": "Grand touring elegance and performance.",
-    "image": "https://placehold.co/400x400/0b0c10/ffd700?text=Bentley%20Continental%20GT",
+    "image": "f67d7c3631187c19e364bdb7f175f8d2-1786500257719-41087.jpg",
     "createdAt": "2026-08-11T10:28:08.261Z",
-    "updatedAt": "2026-08-11T10:28:08.261Z"
+    "updatedAt": "2026-08-12T02:04:17.724Z"
   },
   {
     "id": 27,
@@ -373,9 +373,9 @@
     "supplierId": 6,
     "sku": "CAR-FER-027",
     "description": "Sleek front-engine V8 grand tourer.",
-    "image": "https://placehold.co/400x400/8b0000/ffffff?text=Ferrari%20Roma",
+    "image": "b58db57fbe0b330a05931a7b594ef8d1-1786501578423-58386.jpg",
     "createdAt": "2026-08-11T10:28:08.261Z",
-    "updatedAt": "2026-08-11T10:28:08.261Z"
+    "updatedAt": "2026-08-12T02:26:18.430Z"
   },
   {
     "id": 28,
@@ -387,9 +387,9 @@
     "supplierId": 6,
     "sku": "CAR-LAM-028",
     "description": "Super sport utility vehicle.",
-    "image": "https://placehold.co/400x400/0b0c10/ffd700?text=Lamborghini%20Urus",
+    "image": "5d90bd3b77013d6c90025463c374abd2-1786501610353-91960.jpg",
     "createdAt": "2026-08-11T10:28:08.261Z",
-    "updatedAt": "2026-08-11T10:28:08.261Z"
+    "updatedAt": "2026-08-12T02:26:50.358Z"
   },
   {
     "id": 29,
@@ -401,9 +401,9 @@
     "supplierId": 7,
     "sku": "ELC-APL-029",
     "description": "6.9\" titanium flagship smartphone.",
-    "image": "https://placehold.co/400x400/1c1c1e/ffffff?text=Apple%20iPhone%2016%20Pro%20Max",
+    "image": "e0c93c8622b6c0d95f7d08d004517f61-1786501638687-38451.jpg",
     "createdAt": "2026-08-11T10:28:08.261Z",
-    "updatedAt": "2026-08-11T10:28:08.261Z"
+    "updatedAt": "2026-08-12T02:27:18.692Z"
   },
   {
     "id": 30,
@@ -415,9 +415,9 @@
     "supplierId": 7,
     "sku": "ELC-APL-030",
     "description": "Pro-grade performance laptop.",
-    "image": "https://placehold.co/400x400/1c1c1e/ffffff?text=Apple%20MacBook%20Pro%2016%22%20M4",
+    "image": "cf59ce27b1b1a30045e5b2919edd4032-1786501659374-3507.jpg",
     "createdAt": "2026-08-11T10:28:08.261Z",
-    "updatedAt": "2026-08-11T10:28:08.261Z"
+    "updatedAt": "2026-08-12T02:27:39.379Z"
   },
   {
     "id": 31,
@@ -429,9 +429,9 @@
     "supplierId": 7,
     "sku": "ELC-BO-031",
     "description": "Premium portable speaker.",
-    "image": "https://placehold.co/400x400/1c1c1e/e8c88a?text=Bang%20%26%20Olufsen%20Beosound%20Level",
+    "image": "0745f62d3777ff58a391a3445c1808ec-1786501680918-95051.jpg",
     "createdAt": "2026-08-11T10:28:08.261Z",
-    "updatedAt": "2026-08-11T10:28:08.261Z"
+    "updatedAt": "2026-08-12T02:28:00.923Z"
   },
   {
     "id": 32,
@@ -443,9 +443,9 @@
     "supplierId": 7,
     "sku": "ELC-SON-032",
     "description": "Industry-leading noise cancellation.",
-    "image": "https://placehold.co/400x400/1c1c1e/ffffff?text=Sony%20WH-1000XM6%20Headphones",
+    "image": "baa7d35cef0f066d42423a6d4faaeb99-1786501701174-34265.jpg",
     "createdAt": "2026-08-11T10:28:08.261Z",
-    "updatedAt": "2026-08-11T10:28:08.261Z"
+    "updatedAt": "2026-08-12T02:28:21.178Z"
   },
   {
     "id": 33,
@@ -457,9 +457,9 @@
     "supplierId": 8,
     "sku": "FOD-PET-033",
     "description": "Wild-sourced premium caviar.",
-    "image": "https://placehold.co/400x400/2b2b2b/e8c88a?text=Petrossian%20Beluga%20Caviar%20125g",
+    "image": "6736dfe6a27daf83ce0cab111a262c02-1786501744238-38419.jpg",
     "createdAt": "2026-08-11T10:28:08.261Z",
-    "updatedAt": "2026-08-11T10:28:08.261Z"
+    "updatedAt": "2026-08-12T02:29:04.244Z"
   },
   {
     "id": 34,
@@ -471,9 +471,9 @@
     "supplierId": 8,
     "sku": "FOD-DOM-034",
     "description": "Prestige cuvée champagne.",
-    "image": "https://placehold.co/400x400/2b2b2b/ffd700?text=Dom%20P%C3%A9rignon%20Vintage%20Champagne",
+    "image": "6a06ad9e0be2368446230b593879babf-1786501770412-46140.jpg",
     "createdAt": "2026-08-11T10:28:08.261Z",
-    "updatedAt": "2026-08-11T10:28:08.261Z"
+    "updatedAt": "2026-08-12T02:29:30.417Z"
   },
   {
     "id": 35,
@@ -485,9 +485,9 @@
     "supplierId": 8,
     "sku": "FOD-GOD-035",
     "description": "Belgian luxury chocolate assortment.",
-    "image": "https://placehold.co/400x400/2b2b2b/e8c88a?text=Godiva%20Signature%20Chocolate%20Truffles",
+    "image": "68b92a818aef6d1006e9c5e82bcbece9-1786501802667-77307.jpg",
     "createdAt": "2026-08-11T10:28:08.261Z",
-    "updatedAt": "2026-08-11T10:28:08.261Z"
+    "updatedAt": "2026-08-12T02:30:02.673Z"
   },
   {
     "id": 36,
@@ -499,9 +499,9 @@
     "supplierId": 8,
     "sku": "FOD-WAG-036",
     "description": "Premium marbled A5-grade wagyu.",
-    "image": "https://placehold.co/400x400/2b2b2b/ffffff?text=Japanese%20A5%20Wagyu%20Beef%201kg",
+    "image": "4f1fa75fb2710152d74e633b775d358b-1786501825690-57374.jpg",
     "createdAt": "2026-08-11T10:28:08.261Z",
-    "updatedAt": "2026-08-11T10:28:08.261Z"
+    "updatedAt": "2026-08-12T02:30:25.696Z"
   },
   {
     "id": 37,
@@ -513,9 +513,9 @@
     "supplierId": 9,
     "sku": "HOM-BAC-037",
     "description": "Iconic hand-cut crystal glassware set of 6.",
-    "image": "https://placehold.co/400x400/512b58/ffd700?text=Baccarat%20Harcourt%20Crystal%20Glass%20Set",
+    "image": "6b1f53c77a0f16614883ec6363c799ab-1786501857178-31884.jpg",
     "createdAt": "2026-08-11T10:28:08.261Z",
-    "updatedAt": "2026-08-11T10:28:08.261Z"
+    "updatedAt": "2026-08-12T02:30:57.183Z"
   },
   {
     "id": 38,
@@ -527,9 +527,9 @@
     "supplierId": 4,
     "sku": "HOM-HER-038",
     "description": "Cashmere-wool blend luxury throw.",
-    "image": "https://placehold.co/400x400/3d2b1f/e8c88a?text=Herm%C3%A8s%20Avalon%20Throw%20Blanket",
+    "image": "36d6d92cf04850c1ca3579f603aec1d0-1786501890617-81830.jpg",
     "createdAt": "2026-08-11T10:28:08.261Z",
-    "updatedAt": "2026-08-11T10:28:08.261Z"
+    "updatedAt": "2026-08-12T02:31:30.623Z"
   },
   {
     "id": 39,
@@ -541,9 +541,9 @@
     "supplierId": 4,
     "sku": "HOM-VER-039",
     "description": "Gold-rimmed porcelain 20-piece set.",
-    "image": "https://placehold.co/400x400/512b58/ffd700?text=Versace%20Medusa%20Dinnerware%20Set",
+    "image": "be59caa616aee4d7f9ce5107c4f50de6-1786501932820-71899.jpg",
     "createdAt": "2026-08-11T10:28:08.261Z",
-    "updatedAt": "2026-08-11T10:28:08.261Z"
+    "updatedAt": "2026-08-12T02:32:12.829Z"
   },
   {
     "id": 40,
@@ -555,9 +555,9 @@
     "supplierId": 6,
     "sku": "SPT-HON-040",
     "description": "24K gold-accented premium golf clubs.",
-    "image": "https://placehold.co/400x400/14532d/ffd700?text=Honma%20Beres%20Golf%20Club%20Set",
+    "image": "fb787a6eeaaea4380667b2bc202351e1-1786501995765-56183.jpg",
     "createdAt": "2026-08-11T10:28:08.261Z",
-    "updatedAt": "2026-08-11T10:28:08.261Z"
+    "updatedAt": "2026-08-12T02:33:15.770Z"
   },
   {
     "id": 41,
@@ -569,9 +569,9 @@
     "supplierId": 7,
     "sku": "SPT-PEL-041",
     "description": "Premium connected fitness bike.",
-    "image": "https://placehold.co/400x400/14532d/ffffff?text=Peloton%20Bike%2B",
+    "image": "333544fd15d72dac45a653bdbe761ee0-1786502017719-26146.jpg",
     "createdAt": "2026-08-11T10:28:08.261Z",
-    "updatedAt": "2026-08-11T10:28:08.261Z"
+    "updatedAt": "2026-08-12T02:33:37.728Z"
   },
   {
     "id": 42,
@@ -583,9 +583,9 @@
     "supplierId": 10,
     "sku": "LOC-PAS-042",
     "description": "100% Himalayan cashmere, hand-loomed in Kathmandu.",
-    "image": "https://placehold.co/400x400/7a4a2b/ffd700?text=Handwoven%20Pure%20Pashmina%20Shawl",
+    "image": "59e1f6b3e84a53ed36f379118bee086a-1786502043650-22907.jpg",
     "createdAt": "2026-08-11T10:28:08.261Z",
-    "updatedAt": "2026-08-11T10:28:08.261Z"
+    "updatedAt": "2026-08-12T02:34:03.656Z"
   },
   {
     "id": 43,
@@ -597,9 +597,9 @@
     "supplierId": 11,
     "sku": "LOC-TEA-043",
     "description": "High-altitude orthodox tea from Ilam, 250g.",
-    "image": "https://placehold.co/400x400/2e5339/ffffff?text=Ilam%20Estate%20Orthodox%20Black%20Tea",
+    "image": "e96f728aca106018774e993d33aa8ca7-1786502073502-44116.jpg",
     "createdAt": "2026-08-11T10:28:08.261Z",
-    "updatedAt": "2026-08-11T10:28:08.261Z"
+    "updatedAt": "2026-08-12T02:34:33.511Z"
   },
   {
     "id": 44,
@@ -611,9 +611,9 @@
     "supplierId": 12,
     "sku": "LOC-KHU-044",
     "description": "Authentic hand-forged Gorkha khukuri with sheath.",
-    "image": "https://placehold.co/400x400/3a2e2e/e8c88a?text=Traditional%20Khukuri%20Knife%20(Hand-Forged)",
+    "image": "d3b36ea2de84123cf5b2fbb80618a357-1786502102200-90203.jpg",
     "createdAt": "2026-08-11T10:28:08.261Z",
-    "updatedAt": "2026-08-11T10:28:08.261Z"
+    "updatedAt": "2026-08-12T02:35:02.205Z"
   },
   {
     "id": 45,
@@ -625,9 +625,9 @@
     "supplierId": 10,
     "sku": "LOC-THA-045",
     "description": "Traditional Buddhist mandala thangka painting.",
-    "image": "https://placehold.co/400x400/7a1f1f/ffd700?text=Hand-Painted%20Thangka%20(Mandala)",
+    "image": "e8281c7136bb6fccc264eb4bb2fe891c-1786502140355-59760.jpg",
     "createdAt": "2026-08-11T10:28:08.261Z",
-    "updatedAt": "2026-08-11T10:28:08.261Z"
+    "updatedAt": "2026-08-12T02:35:40.363Z"
   },
   {
     "id": 46,
@@ -639,9 +639,9 @@
     "supplierId": 10,
     "sku": "LOC-DHK-046",
     "description": "Handwoven Dhaka print traditional cap.",
-    "image": "https://placehold.co/400x400/7a4a2b/ffffff?text=Dhaka%20Fabric%20Topi%20(Nepali%20Cap)",
+    "image": "b01d4db7e23c7f8d49e19d33726f5390-1786502173157-12359.jpg",
     "createdAt": "2026-08-11T10:28:08.261Z",
-    "updatedAt": "2026-08-11T10:28:08.261Z"
+    "updatedAt": "2026-08-12T02:36:13.166Z"
   },
   {
     "id": 47,
@@ -653,8 +653,8 @@
     "supplierId": 10,
     "sku": "LOC-SIL-047",
     "description": "Handcrafted traditional silver necklace & earrings.",
-    "image": "https://placehold.co/400x400/4a1942/ffffff?text=Silver%20Filigree%20Nepali%20Jewellery%20Set",
+    "image": "930a74d4a8a1135e565797a8117423b6-1786502204285-51844.jpg",
     "createdAt": "2026-08-11T10:28:08.261Z",
-    "updatedAt": "2026-08-11T10:28:08.261Z"
+    "updatedAt": "2026-08-12T02:36:44.292Z"
   }
 ]
