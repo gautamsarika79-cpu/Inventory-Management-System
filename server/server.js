@@ -9,7 +9,7 @@ const fs = require("fs");
 
 const { seedIfNeeded } = require("./seed");
 
-const authRoutes = require("./routes/auth");
+const authRoutes = require("./routes/authRoutes");
 const productRoutes = require("./routes/products");
 const supplierRoutes = require("./routes/suppliers");
 const categoryRoutes = require("./routes/categories");
